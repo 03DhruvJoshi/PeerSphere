@@ -1,65 +1,65 @@
 const SuggestedUsers = [
   {
     id: 1,
-    name: "A",
+    name: "Amy Whinehouse",
     age: 22,
     image:
-      "https://images.pexels.com/photos/1391498/pexels-photo-1391498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 2,
-    name: "B",
+    name: "Charles Sissons",
     age: 25,
     image:
-      "https://images.pexels.com/photos/1408978/pexels-photo-1408978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/2826131/pexels-photo-2826131.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 3,
-    name: "C",
+    name: "Gloria Smith",
     age: 24,
     image:
-      "https://images.pexels.com/photos/1642228/pexels-photo-1642228.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/1139320/pexels-photo-1139320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 4,
-    name: "D",
+    name: "Syeda Rahman",
     age: 26,
     image:
-      "https://images.pexels.com/photos/1375849/pexels-photo-1375849.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/8640289/pexels-photo-8640289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 5,
-    name: "E",
+    name: "Mikhail Jordan",
     age: 23,
     image:
-      "https://images.pexels.com/photos/227288/pexels-photo-227288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/7776421/pexels-photo-7776421.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 6,
-    name: "F",
+    name: "Felix Turner",
     age: 27,
     image:
-      "https://images.pexels.com/photos/3153200/pexels-photo-3153200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6207902/pexels-photo-6207902.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 7,
-    name: "G",
+    name: "Jennifer Lee",
     age: 22,
     image:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/6550402/pexels-photo-6550402.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
   {
     id: 8,
-    name: "H",
+    name: "Artem Kuznetsov",
     age: 28,
     image:
-      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/5726705/pexels-photo-5726705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   },
 ];
 const matchwithgoalData = [
   {
     id: 1,
-    name: "suhani",
+    name: "Lee Min Ho",
     age: 23,
     image:
       "https://plus.unsplash.com/premium_photo-1661729781158-8abc559a94c5?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -67,31 +67,31 @@ const matchwithgoalData = [
   },
   {
     id: 2,
-    name: "sukanya",
+    name: "Sukanya",
     age: 22,
     image:
-      "https://images.unsplash.com/photo-1622782045716-a05bcc4f5ae8?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/9159036/pexels-photo-9159036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     bio: "A long-term relationship",
   },
   {
     id: 3,
-    name: "pallabi",
+    name: "Richard Roxas",
     age: 23,
     image:
-      "https://images.unsplash.com/photo-1622049605334-72e1e4432346?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/3153200/pexels-photo-3153200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     bio: "A long-term relationship",
   },
   {
     id: 4,
-    name: "manasi",
+    name: "Gabriel Nitoi",
     age: 23,
     image:
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1727&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     bio: "A long-term relationship",
   },
   {
     id: 5,
-    name: "ananya",
+    name: "Ananya Kumar",
     age: 24,
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -102,39 +102,39 @@ const matchwithgoalData = [
 const RECOMMENDATION_USER = [
   {
     id: 6,
-    name: "suhani",
+    name: "Carolina Gomez",
     age: 23,
     image:
-      "https://plus.unsplash.com/premium_photo-1682089810582-f7b200217b67?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/8147477/pexels-photo-8147477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     bio: "A long-term relationship",
   },
   {
     id: 7,
-    name: "rahi",
+    name: "Victoria Lopez",
     age: 23,
     image:
-      "https://plus.unsplash.com/premium_photo-1661634439983-f934c191b4fd?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/6549861/pexels-photo-6549861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     bio: "A long-term relationship",
   },
   {
     id: 8,
-    name: "sonia",
+    name: "Magnus Carlos",
     age: 23,
     image:
-      "https://plus.unsplash.com/premium_photo-1661729781158-8abc559a94c5?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/6147392/pexels-photo-6147392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     bio: "A long-term relationship",
   },
   {
     id: 9,
-    name: "priya",
+    name: "Xi ang Liu",
     age: 24,
     image:
-      "https://images.unsplash.com/photo-1504973960431-7a37e4b3f2c4?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/17659443/pexels-photo-17659443.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     bio: "Seeking a deep connection",
   },
   {
     id: 10,
-    name: "tanisha",
+    name: "Tanisha Patel",
     age: 22,
     image:
       "https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

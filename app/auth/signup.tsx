@@ -1,79 +1,75 @@
-import React, { useState } from 'react';
-import { 
-  View, 
-  Text, 
-  TextInput, 
-  StyleSheet, 
-  Alert, 
-  TouchableOpacity, 
+import React, { useState } from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Alert,
+  TouchableOpacity,
   ImageBackground,
   Dimensions,
   KeyboardAvoidingView,
   Platform,
-  ScrollView
-} from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import { useRouter } from 'expo-router';
-import appwrite from '../../constants/appwrite';
+  ScrollView,
+} from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+import { useRouter } from "expo-router";
+import appwrite from "../../constants/appwrite";
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
 const SignupScreen = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
   const handleSignup = async () => {
     setLoading(true);
     try {
-      await appwrite?.account?.create(
-        'unique()',
-        email,
-        password,
-        name
-      );
-      Alert.alert('Success', 'Account created! Please sign in.');
-      setEmail('');
-      setPassword('');
-      setName('');
-      router.replace('/auth/signin');
+      await appwrite?.account?.create("unique()", email, password, name);
+      Alert.alert("Success", "Account created! Please sign in.");
+      setEmail("");
+      setPassword("");
+      setName("");
+      router.replace("/auth/signin");
     } catch (error: any) {
-      Alert.alert('Signup Error', error.message || 'Unknown error');
+      Alert.alert("Signup Error", error.message || "Unknown error");
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <KeyboardAvoidingView 
-      style={styles.container} 
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <LinearGradient
-        colors={['#FFD600', '#FFD600', '#1a1a1a']}
+        colors={["#FFD600", "#FFD600", "#1a1a1a"]}
         style={styles.gradient}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
       >
-        
         <ImageBackground
-          source={require('../../assets/images/sign-up.jpg')} 
+          source={require("../../assets/images/sign-up.jpg")}
           style={styles.backgroundImage}
           imageStyle={styles.backgroundImageStyle}
         >
           <ScrollView contentContainerStyle={styles.scrollContainer}>
             {/* Header Section */}
             <View style={styles.headerSection}>
-              <Text style={styles.welcomeText}>Join Us Today</Text>
-              <Text style={styles.subtitle}>Create your account and start exploring</Text>
+              <Text style={styles.welcomeText}>Join PeerSphere</Text>
+              <Text style={styles.subtitle}>
+                Create your account and start your journey!
+              </Text>
             </View>
 
             {/* Form Section */}
             <View style={styles.formContainer}>
               <Text style={styles.formTitle}>SIGN UP</Text>
-              
+
               <View style={styles.inputContainer}>
                 <TextInput
                   style={styles.input}
@@ -108,14 +104,17 @@ const SignupScreen = () => {
                 />
               </View>
 
-              <TouchableOpacity 
-                style={[styles.signupButton, loading && styles.signupButtonDisabled]} 
+              <TouchableOpacity
+                style={[
+                  styles.signupButton,
+                  loading && styles.signupButtonDisabled,
+                ]}
                 onPress={handleSignup}
                 disabled={loading}
               >
                 <View style={styles.signupButtonSolid}>
                   <Text style={styles.signupButtonTextSolid}>
-                    {loading ? 'Creating Account...' : 'Sign Up'}
+                    {loading ? "Creating Account..." : "Sign Up"}
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -135,20 +134,20 @@ const SignupScreen = () => {
                 </TouchableOpacity>
               </View>
 
-              <TouchableOpacity 
-                onPress={() => router.replace('/auth/signin')} 
+              <TouchableOpacity
+                onPress={() => router.replace("/auth/signin")}
                 style={styles.linkContainer}
               >
                 <Text style={styles.linkText}>
-                  Already have an account? <Text style={styles.linkHighlight}>Sign In</Text>
+                  Already have an account?{" "}
+                  <Text style={styles.linkHighlight}>Sign In</Text>
                 </Text>
               </TouchableOpacity>
 
               <View style={styles.termsContainer}>
                 <Text style={styles.termsText}>
-                  By signing up, you agree to our{' '}
-                  <Text style={styles.termsLink}>Terms of Service</Text>
-                  {' '}and{' '}
+                  By signing up, you agree to our{" "}
+                  <Text style={styles.termsLink}>Terms of Service</Text> and{" "}
                   <Text style={styles.termsLink}>Privacy Policy</Text>
                 </Text>
               </View>
@@ -175,36 +174,36 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     flexGrow: 1,
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
     minHeight: height,
   },
   headerSection: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 20,
     paddingTop: 60,
   },
   welcomeText: {
     fontSize: 32,
-    fontWeight: 'bold',
-    color: 'white',
-    textAlign: 'center',
+    fontWeight: "bold",
+    color: "white",
+    textAlign: "center",
     marginBottom: 8,
-    textShadowColor: 'rgba(0,0,0,0.3)',
+    textShadowColor: "rgba(0,0,0,0.3)",
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 3,
   },
   subtitle: {
     fontSize: 16,
-    color: 'rgba(255,255,255,0.9)',
-    textAlign: 'center',
-    textShadowColor: 'rgba(0,0,0,0.3)',
+    color: "rgba(255,255,255,0.9)",
+    textAlign: "center",
+    textShadowColor: "rgba(0,0,0,0.3)",
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 3,
   },
   formContainer: {
-    backgroundColor: 'rgba(255,255,255,0.95)',
+    backgroundColor: "rgba(255,255,255,0.95)",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
     padding: 30,
@@ -213,29 +212,29 @@ const styles = StyleSheet.create({
   },
   formTitle: {
     fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
+    textAlign: "center",
     marginBottom: 8,
-    color: '#333',
+    color: "#333",
     letterSpacing: 1,
   },
   inputContainer: {
     marginBottom: 20,
   },
   input: {
-    backgroundColor: '#f8f9fa',
+    backgroundColor: "#f8f9fa",
     borderRadius: 12,
     padding: 16,
     fontSize: 16,
-    color: '#333',
+    color: "#333",
     borderWidth: 1,
-    borderColor: '#e9ecef',
+    borderColor: "#e9ecef",
   },
   signupButton: {
     borderRadius: 12,
-    overflow: 'hidden',
+    overflow: "hidden",
     elevation: 3,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
@@ -247,35 +246,35 @@ const styles = StyleSheet.create({
   },
   signupButtonSolid: {
     paddingVertical: 16,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFD600',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFD600",
     borderRadius: 12,
   },
   signupButtonTextSolid: {
-    color: 'white',
+    color: "white",
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     letterSpacing: 0.5,
   },
   dividerContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginVertical: 20,
   },
   divider: {
     flex: 1,
     height: 1,
-    backgroundColor: '#e9ecef',
+    backgroundColor: "#e9ecef",
   },
   dividerText: {
     marginHorizontal: 16,
-    color: '#6c757d',
+    color: "#6c757d",
     fontSize: 14,
   },
   socialContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     gap: 20,
     marginBottom: 20,
   },
@@ -283,45 +282,42 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    backgroundColor: '#FFD600',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#FFD600",
+    justifyContent: "center",
+    alignItems: "center",
     borderWidth: 1,
-    borderColor: '#1a1a1a',
-    
-    
+    borderColor: "#1a1a1a",
   },
   socialButtonText: {
     fontSize: 20,
-    fontWeight: 'bold',
-    color: '#1a1a1a',
+    fontWeight: "bold",
+    color: "#1a1a1a",
   },
   linkContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     marginBottom: 20,
   },
   linkText: {
-    color: '#6c757d', 
+    color: "#6c757d",
     fontSize: 16,
   },
   linkHighlight: {
-    color: '#FFD600',
-    fontWeight: '700',
-    textDecorationLine: 'underline',
-    
+    color: "#FFD600",
+    fontWeight: "700",
+    textDecorationLine: "underline",
   },
   termsContainer: {
     paddingHorizontal: 10,
   },
   termsText: {
     fontSize: 12,
-    color: '#6c757d', 
-    textAlign: 'center',
+    color: "#6c757d",
+    textAlign: "center",
     lineHeight: 18,
   },
   termsLink: {
-    color: '#FFD600', 
-    fontWeight: '500',  
+    color: "#FFD600",
+    fontWeight: "500",
   },
 });
 

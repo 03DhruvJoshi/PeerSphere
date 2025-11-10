@@ -38,10 +38,10 @@ const UserCard = ({
           alignItems: "center",
         }}
       >
-        <Text style={{ fontSize: 18, fontWeight: "800" }}>
-          {data?.name[0].toUpperCase()}, {data.age}
+        <Text style={{ fontSize: 15, fontWeight: "700" }}>
+          {data?.name}, {data.age}
         </Text>
-        {showLikeIcon && <EvilIcons name="heart" size={24} color="black" />}
+        {showLikeIcon && <EvilIcons name="star" size={24} color="black" />}
       </View>
     </View>
   );

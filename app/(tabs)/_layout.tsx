@@ -68,7 +68,7 @@ export default function TabLayout() {
           options={{
             title: "People",
             tabBarIcon: ({ color }) => (
-              <IconSymbol size={28} name="person.3.fill" color={color} />
+              <Ionicons name="person-add-sharp" size={24} color={color} />
             ),
           }}
         />
@@ -93,9 +93,9 @@ export default function TabLayout() {
         <Tabs.Screen
           name="index"
           options={{
-            title: "liked You",
+            title: "Notifications",
             tabBarIcon: ({ color, focused }) => (
-              <Ionicons name={"heart"} size={24} color={color} />
+              <Ionicons name={"notifications"} size={24} color={color} />
             ),
           }}
         />

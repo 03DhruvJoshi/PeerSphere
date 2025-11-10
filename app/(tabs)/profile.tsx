@@ -14,229 +14,242 @@ import Button from "@/components/Button";
 import { useRouter } from "expo-router";
 
 const PLANS = [
-  { plan: "Get exclusive photo insights", p1: true, p2: true },
-  { plan: "Fast track your likes", p1: true, p2: true },
-  { plan: "Standout every day", p1: true, p2: true },
-  { plan: "Unlimited likes", p1: true, p2: false },
-  { plan: "See who liked you", p1: true, p2: false },
-  { plan: "Advanced filters", p1: true, p2: false },
-  { plan: "Incognito mode", p1: true, p2: false },
-  { plan: "Two compliments a weeks", p1: true, p2: true },
+  {
+    plan: "Verified profile creation using university email",
+    p1: true,
+    p2: true,
+  },
+  {
+    plan: "Interest-based profiles showcasing hobbies and courses​",
+    p1: true,
+    p2: true,
+  },
+  {
+    plan: "Daily limited swipes with familiar swipe interface​",
+    p1: true,
+    p2: true,
+  },
+  { plan: "Secure private chat once matched", p1: true, p2: true },
+  { plan: "Unlimited daily swipes​", p1: false, p2: true },
+  {
+    plan: "Advanced filters by course modules and societies​",
+    p1: false,
+    p2: true,
+  },
+  { plan: "Incognito mode", p1: false, p2: true },
+  { plan: "Ad-free experience", p1: false, p2: true },
 ];
 
-const profile = () => {
-  const headerbutton = () => (
-    <AntDesign name="setting" size={24} color="black" />
+const Profile = () => {
+  const headerButton = () => (
+    <Pressable>
+      <AntDesign name="setting" size={24} color="#1c1c1c" />
+    </Pressable>
   );
   const router = useRouter();
-  return (
-    <ScrollView style={{ paddingHorizontal: 8 }}>
-      <View style={{ gap: 10 }}>
-        <Header headerTitle={"Profile"} button={headerbutton} />
-        <View style={{ flexDirection: "row", gap: 10 }}>
-          <Avatar
-            size={80}
-            image="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          />
-          <View>
-            <Text style={{ fontSize: 22, fontWeight: "600" }}>Prakash, 27</Text>
-            <Button
-              style={{ backgroundColor: "#ebebeb" }}
-              textStyle={{ color: "#1c1c1c" }}
-              onPress={() => router.replace("/auth/signin")}
-            >
-              Complete profile
-            </Button>
-          </View>
-        </View>
-        <View
-          style={{ flexDirection: "row", gap: 10, justifyContent: "center" }}
-        >
-          <View
-            style={{
-              flexDirection: "row",
-              gap: 5,
-              flex: 1,
-              borderWidth: 1,
-              paddingHorizontal: 3,
-              paddingVertical: 10,
-              borderRadius: 12,
-              borderColor: "#f0eded",
-            }}
-          >
-            <View style={styles.circle}>
-              <AntDesign name="star" size={24} color="black" />
-            </View>
-            <View style={{ flexDirection: "column" }}>
-              <Text style={{ fontWeight: "800", color: "white" }}>Spotlight</Text>
-              <Text>Stand out</Text>
-            </View>
-          </View>
-          <View
-            style={{
-              flexDirection: "row",
-              gap: 5,
-              flex: 1,
-              borderWidth: 1,
-              paddingHorizontal: 3,
-              paddingVertical: 10,
-              borderRadius: 12,
-              borderColor: "#f0eded",
-            }}
-          >
-            <View style={styles.circle}>
-              <AntDesign name="star" size={24} color="black" />
-            </View>
-            <View style={{ flexDirection: "column" }}>
-              <Text style={{ fontWeight: "800", color: "white" }}>Spotlight</Text>
-              <Text>Stand out</Text>
-            </View>
-          </View>
-        </View>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <View
-            style={{
-              backgroundColor: "#ffa600",
-              height: 160,
-              width: 300,
-              borderRadius: 20,
-              justifyContent: "center",
-              alignItems: "center",
-              paddingHorizontal: 20,
-              gap: 10,
-              marginRight: 5,
-            }}
-          >
-            <Text style={{ fontWeight: "bold", textAlign: "center" }}>
-              Premium+
-            </Text>
-            <Text style={{ fontWeight: "300", textAlign: "center" }}>
-              Get the VIP teatment, and enjoy better ways to connect with
-              incredible people
-            </Text>
-            <Button
-              style={{ backgroundColor: "#1c1c1c" }}
-              textStyle={{ color: "#ebebeb" }}
-              onPress={() => router.replace("/auth/signin")}
 
-            >
-              Complete profile
-            </Button>
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.contentWrapper}>
+        <Header headerTitle="Profile" button={headerButton} />
+
+        {/* Profile Section */}
+        <View style={styles.profileSection}>
+          <Avatar
+            size={90}
+            props="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          />
+          <View style={styles.profileInfo}>
+            <Text style={styles.nameText}>Richard, 22</Text>
+            {[
+              "Aston University",
+              "Final Year - Computer Science",
+              "Graduate Year - 2026",
+            ].map((text, index) => (
+              <Button
+                key={index}
+                style={styles.infoButton}
+                textStyle={styles.infoButtonText}
+                onPress={() => router.replace("/auth/signin")}
+              >
+                {text}
+              </Button>
+            ))}
           </View>
-          <View
-            style={{
-              backgroundColor: "#ffa600",
-              height: 160,
-              width: 300,
-              borderRadius: 20,
-              justifyContent: "center",
-              alignItems: "center",
-              paddingHorizontal: 20,
-              gap: 10,
-            }}
-          >
-            <Text style={{ fontWeight: "bold", textAlign: "center" }}>
-              Premium+
-            </Text>
-            <Text style={{ fontWeight: "300", textAlign: "center" }}>
-              Get the VIP teatment, and enjoy better ways to connect with
-              incredible people
+        </View>
+
+        {/* Premium Card */}
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          style={styles.cardContainer}
+        >
+          <View style={styles.premiumCard}>
+            <Text style={styles.premiumTitle}>PeerSphere Plus</Text>
+            <Text style={styles.premiumDescription}>
+              Get the VIP treatment, and enjoy better ways to connect with
+              incredible people!
             </Text>
             <Button
-              style={{ backgroundColor: "#1c1c1c" }}
-              textStyle={{ color: "#ebebeb" }}
+              style={styles.subscribeButton}
+              textStyle={styles.subscribeButtonText}
               onPress={() => router.replace("/auth/signin")}
             >
-              Complete profile
+              Subscribe Now!
             </Button>
           </View>
         </ScrollView>
+
+        {/* Plans Table */}
         <View style={styles.table}>
-          <View style={styles.tableItem}>
-            <Text style={[styles.row1, { fontWeight: "bold" }]}>
-              What you get:
+          <View style={styles.tableHeader}>
+            <Text style={[styles.row1, styles.headerText]}>What you get:</Text>
+            <Text style={[styles.row2, styles.headerText]}>Free Tier</Text>
+            <Text style={[styles.row3, styles.headerText]}>
+              PeerSphere Plus
             </Text>
-            <Text style={[styles.row2, { fontWeight: "bold" }]}>Premium+</Text>
-            <Text style={[styles.row3, { fontWeight: "bold" }]}>Premium</Text>
           </View>
-          {PLANS.map((planitem) => {
-            return (
-              <View style={styles.tableItem} key={planitem.plan}>
-                <Text style={[styles.row1, { fontWeight: "300", color:"white" }]}>
-                  {planitem.plan}
-                </Text>
-                <Ionicons
-                  style={styles.row2}
-                  name="checkmark-outline"
-                  size={24}
-                  color={planitem.p1 ? "black" : "#bdb9b9"}
-                />
-                <Ionicons
-                  style={styles.row3}
-                  name="checkmark-outline"
-                  size={24}
-                  color={planitem.p2 ? "black" : "#bdb9b9"}
-                />
-              </View>
-            );
-          })}
-          <View style={styles.tableItem}>
-            <Text style={[styles.row1, { fontWeight: "400" }]}>
-              What you get:
-            </Text>
-            <Ionicons
-              style={styles.row2}
-              name="checkmark-outline"
-              size={24}
-              color="black"
-            />
-            <Ionicons
-              style={styles.row3}
-              name="checkmark-outline"
-              size={24}
-              color="black"
-            />
-          </View>
+          {PLANS.map((planItem) => (
+            <View style={styles.tableItem} key={planItem.plan}>
+              <Text style={[styles.row1, styles.planText]}>
+                {planItem.plan}
+              </Text>
+              <Ionicons
+                style={styles.row2}
+                name={planItem.p1 ? "checkmark-circle" : "close-circle"}
+                size={24}
+                color={planItem.p1 ? "#4CAF50" : "#FF5252"}
+              />
+              <Ionicons
+                style={styles.row3}
+                name={planItem.p2 ? "checkmark-circle" : "close-circle"}
+                size={24}
+                color={planItem.p2 ? "#4CAF50" : "#FF5252"}
+              />
+            </View>
+          ))}
         </View>
       </View>
     </ScrollView>
   );
 };
 
-export default profile;
+export default Profile;
 
 const styles = StyleSheet.create({
-  tableItem: {
+  container: {
+    flex: 1,
+    backgroundColor: "#ffffff",
+  },
+  contentWrapper: {
+    padding: 16,
+    gap: 20,
+  },
+  profileSection: {
     flexDirection: "row",
-    paddingHorizontal: 5,
-    borderBottomWidth: 2,
-    paddingVertical: 5,
-    borderStyle: "solid",
-    borderRadius: 1,
-    borderColor: "#f0eded",
+    gap: 16,
+    paddingVertical: 10,
   },
-  row1: { width: "40%" },
-  row2: {
-    width: "30%",
-    justifyContent: "center",
-    alignItems: "center",
+  profileInfo: {
+    flex: 1,
+    gap: 8,
   },
-  row3: {
-    width: "30%",
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "center",
+  nameText: {
+    fontSize: 24,
+    fontWeight: "600",
+    color: "#1c1c1c",
+    marginBottom: 4,
+  },
+  infoButton: {
+    backgroundColor: "#f5f5f5",
+    borderRadius: 8,
+    paddingVertical: 8,
+  },
+  infoButtonText: {
+    color: "#1c1c1c",
+    fontSize: 14,
+    fontWeight: "500",
+  },
+  cardContainer: {
+    marginVertical: 10,
+  },
+  premiumCard: {
+    backgroundColor: "#ffa600",
+    width: "60%",
+    borderRadius: 24,
+    padding: 24,
+    gap: 16,
+    elevation: 4,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+  },
+  premiumTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#ffffff",
+    textAlign: "center",
+  },
+  premiumDescription: {
+    fontSize: 16,
+    color: "#ffffff",
+    textAlign: "center",
+    lineHeight: 24,
+  },
+  subscribeButton: {
+    backgroundColor: "#1c1c1c",
+    borderRadius: 12,
+    paddingVertical: 12,
+  },
+  subscribeButtonText: {
+    color: "#ffffff",
+    fontSize: 16,
+    fontWeight: "600",
   },
   table: {
     width: "100%",
-    gap: 4,
+    borderRadius: 12,
+    overflow: "hidden",
+    backgroundColor: "#ffffff",
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
   },
-  circle: {
-    borderRadius: 40,
-    height: 40,
-    width: 40,
-    backgroundColor: "#ffa600",
-    justifyContent: "center",
-    alignItems: "center",
+  tableHeader: {
+    flexDirection: "row",
+    backgroundColor: "#f5f5f5",
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+  },
+  headerText: {
+    fontWeight: "bold",
+    fontSize: 16,
+    color: "#1c1c1c",
+  },
+  tableItem: {
+    flexDirection: "row",
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: "#f0f0f0",
+  },
+  planText: {
+    fontSize: 14,
+    color: "#333333",
+  },
+  row1: {
+    width: "40%",
+    paddingRight: 10,
+  },
+  row2: {
+    width: "30%",
+    textAlign: "center",
+  },
+  row3: {
+    width: "30%",
+    textAlign: "center",
   },
 });

@@ -5,72 +5,153 @@ import {
   StyleSheet,
   Text,
   View,
+  Animated,
 } from "react-native";
 import React from "react";
 import Header from "@/components/Header";
 import { Octicons } from "@expo/vector-icons";
 
-const LikedYou = () => {
-  const button = () => <Octicons name="filter" size={24} color="black" />;
+const NotificationItem = ({ image, title, time, icon }) => (
+  <Animated.View style={styles.notificationCard}>
+    {image ? (
+      <Image source={{ uri: image }} style={styles.avatar} />
+    ) : (
+      <View style={styles.iconContainer}>
+        <Octicons name={icon} size={24} color="#666" />
+      </View>
+    )}
+    <View style={styles.notificationContent}>
+      <Text style={styles.notificationTitle}>{title}</Text>
+      <Text style={styles.timeText}>{time}</Text>
+    </View>
+  </Animated.View>
+);
+
+const Notifications = () => {
+  const button = () => (
+    <Pressable style={styles.filterButton}>
+      <Octicons name="filter" size={24} color="#1c1c1c" />
+    </Pressable>
+  );
+
+  const notifications = [
+    {
+      image: "https://randomuser.me/api/portraits/men/1.jpg",
+      title: "Mike Smith sent you a friend request",
+      time: "2 hours ago",
+    },
+    {
+      image: "https://randomuser.me/api/portraits/women/1.jpg",
+      title: "Sarah Johnson sent you a message",
+      time: "5 hours ago",
+    },
+    {
+      icon: "info",
+      title: "System Update",
+      time: "New features available!",
+    },
+  ];
+
   return (
-    <ScrollView style={{ paddingHorizontal: 8 }}>
-      <Header headerTitle={"Liked You"} button={button} />
-      <Text style={{ fontWeight: "300" }}>
-        When people are into you, they'll appear here. Enjoy
-      </Text>
-      <View
-        style={{
-          alignSelf: "center",
-          alignItems: "center",
-          position: "relative",
-          top: 100,
-          gap: 8,
-          paddingHorizontal: 10,
-        }}
-      >
-        <Image
-          source={{
-            uri: "https://plus.unsplash.com/premium_vector-1732639583203-83ff3f727fe8?q=80&w=2842&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          }}
-          style={{ width: 200, height: 200, borderRadius: 20 }}
-        />
-        <Text
-          style={{
-            fontSize: 24,
-            fontWeight: "bold",
-            color: "#1a1a1a",
-            textAlign: "center",
-          }}
-        >
-          Get Spotlight for more likes
-        </Text>
-        <Text
-          style={{
-            fontSize: 18,
-            color: "#1a1a1a",
-            textAlign: "center",
-            fontWeight: "300",
-          }}
-        >
-          You'll be shown ahead of other people for 30 minutes.
-        </Text>
-        <Pressable
-          style={{
-            width: 200,
-            backgroundColor: "#1a1a1a",
-            padding: 10,
-            borderRadius: 30,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Text style={{ color: "white", fontSize: 20 }}>Get Spotlight</Text>
-        </Pressable>
+    <ScrollView style={styles.container}>
+      <View style={styles.contentWrapper}>
+        <Header headerTitle="Notifications" button={button} />
+
+        <View style={styles.introSection}>
+          <Text style={styles.subtitle}>
+            You will receive notifications of friend requests, messages, and
+            system updates here.
+          </Text>
+        </View>
+
+        <View style={styles.notificationsContainer}>
+          {notifications.map((notification, index) => (
+            <NotificationItem
+              key={index}
+              image={notification.image}
+              title={notification.title}
+              time={notification.time}
+              icon={notification.icon}
+            />
+          ))}
+        </View>
       </View>
     </ScrollView>
   );
 };
 
-export default LikedYou;
+export default Notifications;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f8f9fa",
+  },
+  contentWrapper: {
+    padding: 16,
+    gap: 20,
+  },
+  introSection: {
+    backgroundColor: "#ffffff",
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 8,
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  subtitle: {
+    fontSize: 15,
+    color: "#666666",
+    lineHeight: 22,
+  },
+  notificationsContainer: {
+    gap: 12,
+  },
+  notificationCard: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#ffffff",
+    padding: 16,
+    borderRadius: 12,
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  avatar: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+  },
+  iconContainer: {
+    backgroundColor: "#f0f2f5",
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  notificationContent: {
+    marginLeft: 16,
+    flex: 1,
+  },
+  notificationTitle: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#1c1c1c",
+    marginBottom: 4,
+  },
+  timeText: {
+    fontSize: 14,
+    color: "#666666",
+  },
+  filterButton: {
+    padding: 8,
+    borderRadius: 8,
+    backgroundColor: "#f0f2f5",
+  },
+});

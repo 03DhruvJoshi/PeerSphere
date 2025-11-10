@@ -19,12 +19,14 @@ const Chats = () => {
             router.push("/charscreenf");
           }}
         >
-          <Text style={{ fontSize: 16, fontWeight: "700" }}>Your matches</Text>
+          <Text style={{ fontSize: 16, fontWeight: "700" }}>
+            Your UniBuddies!
+          </Text>
         </Pressable>
         <View style={{ flexDirection: "row", gap: 10 }}>
           <Avatar
             size={80}
-            image="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            props="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           />
           <View style={{ width: "100%" }}>
             <Text
@@ -34,13 +36,56 @@ const Chats = () => {
                 maxWidth: "70%",
               }}
             >
-              Spotlight is the easiest way to up your adds of a match!
+              Start your first conversation with your friends now!
             </Text>
           </View>
         </View>
         <View style={styles.headerSection}>
           <Text style={styles.logo}>Chats</Text>
           <MaterialCommunityIcons name="sort-variant" size={24} color="black" />
+        </View>
+
+        {/* Chat List */}
+        <View style={styles.chatList}>
+          {/* Chat Item 1 */}
+          <Pressable
+            style={styles.chatItem}
+            onPress={() => router.push("/chatScreen")}
+          >
+            <Avatar
+              size={50}
+              props="https://randomuser.me/api/portraits/women/1.jpg"
+            />
+            <View style={styles.chatInfo}>
+              <View style={styles.chatHeader}>
+                <Text style={styles.chatName}>Sarah Johnson</Text>
+                <Text style={styles.chatTime}>2:30 PM</Text>
+              </View>
+              <Text style={styles.lastMessage}>
+                Hey! How's your project going?
+              </Text>
+            </View>
+          </Pressable>
+
+          {/* Chat Item 2 */}
+          <Pressable
+            style={styles.chatItem}
+            onPress={() => router.push("/chatScreen")}
+          >
+            <Avatar
+              size={50}
+              props="https://randomuser.me/api/portraits/men/1.jpg"
+            />
+            <View style={styles.chatInfo}>
+              <View style={styles.chatHeader}>
+                <Text style={styles.chatName}>Mike Smith</Text>
+                <Text style={styles.chatTime}>Yesterday</Text>
+              </View>
+              <Text style={styles.lastMessage}>
+                Let's meet at the library at 3!
+              </Text>
+            </View>
+          </Pressable>
         </View>
       </View>
     </ScrollView>
@@ -61,5 +106,40 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 1,
     color: "#1a1a1a",
+  },
+  chatList: {
+    gap: 12,
+    marginTop: 10,
+  },
+  chatItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: "#e5e5e5",
+  },
+  chatInfo: {
+    flex: 1,
+  },
+  chatHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 4,
+  },
+  chatName: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#1a1a1a",
+  },
+  chatTime: {
+    fontSize: 12,
+    color: "#666",
+  },
+  lastMessage: {
+    fontSize: 14,
+    color: "#666",
+    marginRight: 40,
   },
 });

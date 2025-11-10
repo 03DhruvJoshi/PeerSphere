@@ -22,10 +22,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingVertical: 8,
     marginBottom: 6,
-
   },
   logo: {
-    color: "white",
+    color: "black",
     fontSize: 24,
     fontWeight: "bold",
     letterSpacing: 1,
