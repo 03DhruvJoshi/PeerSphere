@@ -22,13 +22,6 @@ Current platforms like Meetup and Bumble serve general populations. They lack th
 
 Our solution caters for only verified students from your institution, no strangers, just genuine peers from your campus. And you have the benefit of finding friends through shared hobbies, courses, and society memberships, not just location.
 
-## 📸 Screenshots
-<!-- <p align="center">
-  <!-- <img src="https://github.com/user-attachments/assets/8e9c71be-0aaf-4874-90dc-22dd54557183" alt="Humbble Screenshot 1" width="200">
-  <img src="https://github.com/user-attachments/assets/d5d01e7b-dc27-450e-91e0-68f689d810a6" alt="Humbble Screenshot 2" width="200">
-  <img src="https://github.com/user-attachments/assets/e313c377-f4b0-4494-a116-e825cb37ef0d" alt="Humbble Screenshot 3" width="200"> </p></br> -->
-
-
 ## 🔧 Getting Started
 
 ### Prerequisites
@@ -68,3 +61,5 @@ npm run ios
 ## 📜 License
 
 PeerSphere is licensed under the MIT License. See [LICENSE](https://github.com/Prakashchandra-007/humbble/blob/main/LICENSE) for details.
+
+All multimedia content within the app has been sourced from [Stock Images](https://www.pexels.com/search/university%20student/)
