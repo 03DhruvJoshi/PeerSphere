@@ -1,26 +1,33 @@
-# Humbble - The Open Source Dating App
+# PeerSphere
 
-Humbble is an open-source dating app alternative to Bumble. Our goal is to create a privacy-focused, feature-rich dating platform that is free from corporate control and empowers users with transparency and choice.
+A secure, hyper-local social platform exclusively for verified students to find genuine connections based on shared interests, hobbies, and academic pursuits within their university community.
 
-<img src="https://github.com/user-attachments/assets/0b412b3f-df7b-4ddf-8739-21b3084fac3b" alt="Humbble Screenshot 1" width="900"></br>
 ## 🚀 Features
 
-- **Matchmaking Algorithm** – Smart and customizable matching system.
-- **Privacy First** – No tracking, no data selling.
-- **Real-Time Chat** – Secure messaging between matches.
-- **Open-Source** – Transparent and community-driven.
-- **Cross-Platform** – Available for Web, Android, and iOS.
+Verified Profile Creation: 
+Interest-Based Profiles: 
+Familiar Swiping Interface: 
+Targeted Matching Algorithm: 
+: 
 
-## 💡 Why Humbble?
+- **Verified Profile Creation** – Users must sign up and verify their identity using their official university email address. This ensures all users are genuine students from the same institution, creating a trusted and safe community. 
+- **Interest-Based Profiles** – Users can build a profile that showcases their hobbies, academic course, society memberships, and other personal interests. 
+- **Familiar Swiping Interface** – We use a low-pressure 'swipe-right-to-connect' and 'swipe-left-to-pass' mechanism. This familiar system removes the "fear of rejection" associated with in-person approaches, as users are only notified of a mutual interest. 
+- **Targeted Matching Algorithm** – The platform displays profiles based on shared interests, course-mates, and other user-defined preferences, increasing the likelihood of a successful connection. 
+- **Private Chat Functionality** – Once two users mutually "match", a private chat is unlocked, allowing them to communicate securely within the app. 
 
-Many dating apps prioritize profits over user experience and privacy. Humbble is different. By making the code open-source, we invite developers to contribute, improve, and ensure fairness in online dating.
+## 💡 Why PeerSphere?
+
+Current platforms like Meetup and Bumble serve general populations. They lack the trust, verification, and closed-community focus that university students need, leaving a critical market gap. 
+
+Our solution caters for only verified students from your institution, no strangers, just genuine peers from your campus. And you have the benefit of finding friends through shared hobbies, courses, and society memberships, not just location.
 
 ## 📸 Screenshots
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/8e9c71be-0aaf-4874-90dc-22dd54557183" alt="Humbble Screenshot 1" width="200">
+<!-- <p align="center">
+  <!-- <img src="https://github.com/user-attachments/assets/8e9c71be-0aaf-4874-90dc-22dd54557183" alt="Humbble Screenshot 1" width="200">
   <img src="https://github.com/user-attachments/assets/d5d01e7b-dc27-450e-91e0-68f689d810a6" alt="Humbble Screenshot 2" width="200">
-  <img src="https://github.com/user-attachments/assets/e313c377-f4b0-4494-a116-e825cb37ef0d" alt="Humbble Screenshot 3" width="200">
-</p></br>
+  <img src="https://github.com/user-attachments/assets/e313c377-f4b0-4494-a116-e825cb37ef0d" alt="Humbble Screenshot 3" width="200"> </p></br> -->
+
 
 ## 🔧 Getting Started
 
@@ -33,7 +40,7 @@ Many dating apps prioritize profits over user experience and privacy. Humbble is
 ### Installation
 
 ```sh
-git clone https://github.com/Prakashchandra-007/Humbble.git
+git clone [https://github.com/Prakashchandra-007/Humbble.git](https://github.com/03DhruvJoshi/PeerSphere.git)
 cd Humbble
 npm install
 ```
@@ -58,28 +65,6 @@ For iOS:
 npm run ios
 ```
 
-## 👥 Contributing
-
-We welcome all contributions! If you’d like to contribute:
-
-1. Fork the repository
-2. Create a new branch (`feature-new-feature`)
-3. Commit your changes (`git commit -m "Added new feature"`)
-4. Push to the branch (`git push origin feature-new-feature`)
-5. Create a Pull Request
-
-Check our [CONTRIBUTING.md](https://github.com/Prakashchandra-007/humbble/blob/main/CONTRIBUTING.md) for more details.
-
 ## 📜 License
 
-Humbble is licensed under the MIT License. See [LICENSE](https://github.com/Prakashchandra-007/humbble/blob/main/LICENSE) for details.
-
-## 📢 Community & Support
-
-Join the discussion on:
-
-- [Discord](https://discord.gg/vGSWrzCF)
-- [Twitter](https://x.com/prakash_cm_007)
-- [GitHub Discussions](https://github.com/Prakashchandra-007/humbble/discussions)
-
-Let's build a better dating experience together! ❤️
+PeerSphere is licensed under the MIT License. See [LICENSE](https://github.com/Prakashchandra-007/humbble/blob/main/LICENSE) for details.
