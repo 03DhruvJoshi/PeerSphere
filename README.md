@@ -33,7 +33,7 @@ Our solution caters for only verified students from your institution, no strange
 ### Installation
 
 ```sh
-git clone [https://github.com/Prakashchandra-007/Humbble.git](https://github.com/03DhruvJoshi/PeerSphere.git)
+git clone https://github.com/03DhruvJoshi/PeerSphere.git
 npm install
 ```
 
